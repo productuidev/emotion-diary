@@ -1,1 +1,15 @@
-.App { padding:20px; margin:20px; }
+@import url('https://fonts.googleapis.com/css2?family=Yeon+Sung&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
+
+body {margin:0;padding:0;display:flex;justify-content:center;align-items:center;font-family:"Nanum Pen Script",cursive;min-height:100vh;background-color:#f6f6f6;}
+
+#root {background-color:#fff;box-shadow:rgba(100,100,111,0.2) 0 7px 29px 0;}
+.App {min-height:100vh;padding:0 20px;}
+
+@media (min-width:650px) {
+  .App {width:640px;}
+}
+
+@media (max-width:650px) {
+  .App {width:90vw;}
+}
