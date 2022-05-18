@@ -1,7 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Yeon+Sung&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
 
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd,
+q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, menu, ol, ul, li, fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, main, menu, nav,
+output, ruby, section, summary, time, mark, audio, video {margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section {display:block;}
+/* HTML5 hidden-attribute fix for newer browsers */
+*[hidden] {display:none;}
+body {line-height:1;}
+menu, ol, ul {list-style:none;}
+blockquote, q {quotes:none;}
+blockquote:before, blockquote:after, q:before, q:after {content:'';content:none;}
+table {border-collapse:collapse;border-spacing:0;}
+button {border:0;padding:0;margin:0;cursor:pointer;}
+
 body {margin:0;padding:0;display:flex;justify-content:center;align-items:center;font-family:"Nanum Pen Script",cursive;min-height:100vh;background-color:#f6f6f6;}
+
 
 #root {background-color:#fff;box-shadow:rgba(100,100,111,0.2) 0 7px 29px 0;}
 .App {min-height:100vh;padding:0 20px;}
@@ -13,3 +28,18 @@ body {margin:0;padding:0;display:flex;justify-content:center;align-items:center;
 @media (max-width:650px) {
   .App {width:90vw;}
 }
+
+/* Header */
+header {display:flex;align-items:center;padding:20px 0;margin:0;border-bottom:1px solid #e2e2e2;}
+header > div {display:flex;}
+header .head_text {justify-content:center;width:50%;font-size:24px;}
+header .head_btn_left {justify-content:start;width:25%;}
+header .head_btn_right {justify-content:end;width:25%;}
+header button {font-family:"Nanum Pen Script",cursive;}
+
+
+/* MyButton */
+.MyButton {padding:10px 20px;border:0;border-radius:4px;font-family:"Nanum Pen Script",cursive;font-size:18px;white-space:nowrap;}
+.MyButton_default {background-color:#ececec;color:#000;}
+.MyButton_positive {background-color:#64c964;color:#FFF;}
+.MyButton_negative {background-color:#fd565f;color:#FFF;}
