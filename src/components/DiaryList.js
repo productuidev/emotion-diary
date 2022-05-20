@@ -16,7 +16,7 @@ const filterOptionList = [
 // Memu
 const ControlMenu = ({value, onChange, optionList}) => {
   return (
-    <select className={ControlMenu} value={value} onChange={(e)=>onChange(e.target.value)}>
+    <select className="ControlMenu" value={value} onChange={(e)=>onChange(e.target.value)}>
       {optionList.map((it,idx)=>(
         <option value={it.value}>{it.name}</option>
       ))}
