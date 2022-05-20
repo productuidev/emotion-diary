@@ -38,9 +38,17 @@ const reducer = (state, action) => {
 export const DiaryStateContext = React.createContext();
 export const DiaryDispatchContext = React.createContext();
 
+// 일기 더미데이터
+const dummyData = [
+  {
+    id:1, emotion:1, content:"오늘의일기 1번", date:1653055859902,
+  },
+]
+
 function App() {
   // data의 기본 state는 []
   const [data, dispatch] = useReducer(reducer, []);
+  console.log(new Date().getTime(dummyData)); // 현재시간
 
   // 일기 id로 사용
   const dataId = useRef(0);
