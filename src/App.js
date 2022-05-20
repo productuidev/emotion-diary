@@ -82,7 +82,6 @@ function App() {
       <DiaryDispatchContext.Provider value={{onCreate, onEdit, onRemove}}>
         <BrowserRouter>
           <div className="App">
-            <h2>App.js</h2>
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/new" element={<New />} />
