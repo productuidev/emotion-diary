@@ -61,3 +61,8 @@ header .head_btn_right {justify-content:end;width:25%;}
 .DiaryItem .emotionImgWrapper3 { background-color:#fdce17; }
 .DiaryItem .emotionImgWrapper4 { background-color:#fd8446; }
 .DiaryItem .emotionImgWrapper5 { background-color:#fd565f; }
+
+.DiaryItem .infoWrapper { margin:0 20px;padding:0;flex-grow:1;cursor:pointer; }
+.DiaryItem .infoWrapper .DiaryDate { margin-bottom:4px;font-weight:600;font-size:24px; }
+.DiaryItem .infoWrapper .DiaryContentPreview { font-size:18px; }
+.DiaryItem .btnWrapper { min-width:70px; }
