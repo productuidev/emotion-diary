@@ -48,8 +48,8 @@ const dummyData = [
 ]
 
 function App() {
-  // data의 기본 state는 []
-  const [data, dispatch] = useReducer(reducer, []);
+  // data의 기본 state는 []에서 dummyData 받기
+  const [data, dispatch] = useReducer(reducer, dummyData);
   //console.log(new Date().getTime(dummyData)); // 현재시간
 
   // 일기 id로 사용
