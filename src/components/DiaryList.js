@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import MyButton from "./MyButton";
 
 const sortOptionList = [
   { value: "latest", name: "최신순" },
@@ -14,7 +16,7 @@ const filterOptionList = [
 // Memu
 const ControlMenu = ({value, onChange, optionList}) => {
   return (
-    <select value={value} onChange={(e)=>onChange(e.target.value)}>
+    <select className={ControlMenu} value={value} onChange={(e)=>onChange(e.target.value)}>
       {optionList.map((it,idx)=>(
         <option value={it.value}>{it.name}</option>
       ))}
@@ -24,6 +26,8 @@ const ControlMenu = ({value, onChange, optionList}) => {
 
 // List
 const DiaryList = ({diaryList}) => {
+  // navigate
+  const navigate = useNavigate();
   // sort
   const [sortType, setSortType] = useState("latest");
   // filter
@@ -58,9 +62,16 @@ const DiaryList = ({diaryList}) => {
   }
 
   return (
-    <div>
-      <ControlMenu value={sortType} onChange={setSortType} optionList={sortOptionList} /> 
-      <ControlMenu value={filter} onChange={setFilter} optionList={filterOptionList} />
+    <div className="DiaryList">
+      <div class="menuWrapper">
+        <div className="leftCol">
+          <ControlMenu value={sortType} onChange={setSortType} optionList={sortOptionList} /> 
+          <ControlMenu value={filter} onChange={setFilter} optionList={filterOptionList} />
+        </div>
+        <div className="rightCol">
+          <MyButton type={"positive"} text={"새 일기쓰기"} onClick={()=>navigate("./new")} />
+        </div>
+      </div>
       {getProcessedDiaryList().map((it)=>(
         <div key={it.id}>
           {it.content} {it.emotion}
