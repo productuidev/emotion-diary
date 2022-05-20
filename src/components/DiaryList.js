@@ -20,7 +20,7 @@ const ControlMenu = ({value, onChange, optionList}) => {
       ))}
     </select>
   );
-}
+};
 
 // List
 const DiaryList = ({diaryList}) => {
@@ -29,7 +29,17 @@ const DiaryList = ({diaryList}) => {
   // filter
   const [filter, setFilter] = useState("all");
 
+  // 정렬조건
   const getProcessedDiaryList = () => {
+    const filterCallBack = (item) => {
+      if(filter === "good") {
+        return parseInt(item.emotion) <= 3;
+      }
+      else {
+        return parseInt(item.emotion) > 3;
+      }
+    };
+
     const compare = (a, b) => {
       if(sortType === "latest") {
         return parseInt(b.date) - parseInt(a.date);
@@ -40,16 +50,21 @@ const DiaryList = ({diaryList}) => {
     };
 
     const copyList = JSON.parse(JSON.stringify(diaryList));
-    const sortedList = copyList.sort(compare);
-    
+    const filteredList =
+      filter === "all" ? copyList : copyList.filter((it)=>filterCallBack(it));
+
+    const sortedList = filteredList.sort(compare);    
     return sortedList;
   }
 
   return (
     <div>
-      <ControlMenu value={sortType} onChange={setSortType} optionList={sortOptionList} />
+      <ControlMenu value={sortType} onChange={setSortType} optionList={sortOptionList} /> 
+      <ControlMenu value={filter} onChange={setFilter} optionList={filterOptionList} />
       {getProcessedDiaryList().map((it)=>(
-        <div key={it.id}>{it.content}</div>
+        <div key={it.id}>
+          {it.content} {it.emotion}
+        </div>
       ))}
     </div>
   );
