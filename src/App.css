@@ -48,7 +48,16 @@ header .head_btn_right {justify-content:end;width:25%;}
 /* DiaryList */
 .DiaryList { padding:20px 0 0 0; }
 .DiaryList .menuWrapper { display:flex;justify-content:space-between;margin:20px 0 30px 0;padding:0;}
-.DiaryList .menuWrapper .leftCol {}
 .DiaryList .ControlMenu { margin:0 10px 0 0;padding:9px 20px;border:none;border-radius:5px;background-color:#ececec;font-size:18px; }
 .DiaryList .menuWrapper .rightCol { flex-grow:1; }
 .DiaryList .menuWrapper .rightCol button { width:100%; }
+
+/* DiaryItem */
+.DiaryItem { display:flex;justify-content:space-between;margin:0;padding:15px 0;border-bottom:1px solid #e2e2e2; }
+.DiaryItem .emotionImgWrapper { display:flex;justify-content:center;min-width:120px;height:80px; cursor:pointer;border-radius:8px; }
+.DiaryItem .emotionImgWrapper img { width:50%; }
+.DiaryItem .emotionImgWrapper1 { background-color:#64c964; }
+.DiaryItem .emotionImgWrapper2 { background-color:#9dd772; }
+.DiaryItem .emotionImgWrapper3 { background-color:#fdce17; }
+.DiaryItem .emotionImgWrapper4 { background-color:#fd8446; }
+.DiaryItem .emotionImgWrapper5 { background-color:#fd565f; }
