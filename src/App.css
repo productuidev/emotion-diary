@@ -14,7 +14,7 @@ menu, ol, ul {list-style:none;}
 blockquote, q {quotes:none;}
 blockquote:before, blockquote:after, q:before, q:after {content:'';content:none;}
 table {border-collapse:collapse;border-spacing:0;}
-select {cursor:pointer;}
+input, select {cursor:pointer;}
 button {border:0;padding:0;margin:0;cursor:pointer;}
 
 /* common */
@@ -71,3 +71,10 @@ header .head_btn_right {justify-content:end;width:25%;}
 .DiaryItem .infoWrapper .DiaryDate { margin-bottom:4px;font-weight:600;font-size:24px; }
 .DiaryItem .infoWrapper .DiaryContentPreview { font-size:18px; }
 .DiaryItem .btnWrapper { display:flex;align-items:center; /* min-width:70px; */ }
+
+/* DiaryEditor */
+.DiaryEditor { position:relative; }
+.DiaryEditor section { margin:0 0 40px 0; }
+.DiaryEditor h4 { padding:24px 0 16px;font-size:22px;font-weight:600; }
+.DiaryEditor .inputBox { position:relative; }
+.DiaryEditor .inputDate { margin:0 10px 0 0;padding:9px 20px;border:none;border-radius:5px;background-color:#ececec;font-size:18px; }
