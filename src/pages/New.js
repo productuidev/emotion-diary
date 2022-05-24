@@ -6,11 +6,10 @@ import MyButton from "./../components/MyButton";
 
 const getStringDate = (date) => {
   return date.toISOString().slice(0, 10);
-}
+};
 
 const New = () => {
-  console.log(getStringDate(new Date()));
-  const [date, setDate] = useState();
+  const [date, setDate] = useState(getStringDate(new Date()));
 
   const navigate = useNavigate();
   return (
@@ -24,6 +23,7 @@ const New = () => {
           <h4>오늘은 언제인가요?</h4>
           <div className="inputBox">
             <input
+              className="inputDate"
               type="date"
               value={date}
               onChange={(e)=>setDate(e.target.value)} />
