@@ -3,9 +3,10 @@ import { useNavigate } from "react-router-dom";
 
 import MyHeader from "./MyHeader";
 import MyButton from "./MyButton";
+import EmotionItem from "./EmotionItem";
 
 const env = process.env;
-env.PUBLIC_URL = env.PUBLIC_URL || '';
+env.PUBLIC_URL = env.PUBLIC_URL || "";
 
 const emotionList = [
   {
@@ -64,7 +65,8 @@ const DiaryEditor = () => {
           <h4>오늘의 감정</h4>
           <div className="inputBox emotionListWrapper">
             {emotionList.map((it)=>(
-              <div key={it.emotion_id}>{it.emotion_descript}</div>
+              <EmotionItem key={it.emotion_id} {...it} />
+              // <div key={it.emotion_id}>{it.emotion_descript}</div>
             ))}
           </div>
         </section>
