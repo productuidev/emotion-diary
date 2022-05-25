@@ -89,6 +89,12 @@ const DiaryEditor = () => {
             />
           </div>
         </section>
+        <section>
+          <div className="controlBox">
+            <MyButton text={"취소하기"} onClick={()=>navigate(-1)} />
+            <MyButton text={"작성완료"} type={"positive"} onClick={()=>{}} />
+          </div>
+        </section>
       </div>
     </div>
   );
