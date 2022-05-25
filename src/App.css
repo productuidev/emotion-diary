@@ -14,12 +14,13 @@ menu, ol, ul {list-style:none;}
 blockquote, q {quotes:none;}
 blockquote:before, blockquote:after, q:before, q:after {content:'';content:none;}
 table {border-collapse:collapse;border-spacing:0;}
-input, select {cursor:pointer;}
+input, select, textarea {cursor:pointer;}
 button {border:0;padding:0;margin:0;cursor:pointer;}
 
 /* common */
 body {margin:0;padding:0;display:flex;justify-content:center;align-items:center;font-family:"Nanum Pen Script",cursive;min-height:100vh;background-color:#f6f6f6;}
-div, p, span, em, li, form, label, table, caption, thead, tbody, tfoot, input, select, option, button { font-family:"Nanum Pen Script",cursive; }
+div, p, span, em, li, form, label, table, caption, thead, tbody, tfoot, input, select, option, button, textarea { font-family:"Nanum Pen Script",cursive; }
+*:focus { outline-color:#000; }
 
 #root {background-color:#fff;box-shadow:rgba(100,100,111,0.2) 0 7px 29px 0;}
 .App {min-height:100vh;padding:0 20px;}
@@ -80,10 +81,14 @@ header .head_btn_right {justify-content:end;width:25%;}
 .DiaryEditor .inputDate { margin:0 10px 0 0;padding:9px 20px;border:none;border-radius:5px;background-color:#ececec;font-size:18px; }
 .DiaryEditor .emotionListWrapper { display:grid;grid-template-columns:repeat(5, auto);gap:2%; }
 
+/* textWrapper */
+.DiaryEditor textarea { padding:20px 16px;font-size:18px;box-sizing:border-box;width:100%;min-height:200px;resize:vertical;border-radius:5px;background-color:#ececec;border:none; }
+.DiaryEditor textarea:focus { background-color:#fff;border:1px solid #ececec; }
+
 /* EmotionItem */
 .EmotionItem { cursor:pointer;border-radius:5px;padding:20px 0;display:flex;flex-direction:column;justify-content:center;align-items:center; }
 .EmotionItem img { width:50%; }
-.EmotionItem span { display:inline-block;margin-top:12px;font-size:16px; }
+.EmotionItem span { display:inline-block;margin-top:12px;font-size:16gpx; }
 
 /* EmotionItem On/Off */
 .EmotionItem_off { background-color:#ececec; }
@@ -92,3 +97,5 @@ header .head_btn_right {justify-content:end;width:25%;}
 .EmotionItem_on3 { background-color:#fdce17;color:#fff; }
 .EmotionItem_on4 { background-color:#fd8446;color:#fff; }
 .EmotionItem_on5 { background-color:#fd565f;color:#fff; }
+
+
