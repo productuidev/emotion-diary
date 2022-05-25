@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 
 import MyHeader from "./MyHeader";
@@ -43,6 +43,9 @@ const getStringDate = (date) => {
 const DiaryEditor = () => {
   const [emotion, setEmotion] = useState(3); // 3번 default
   const [date, setDate] = useState(getStringDate(new Date()));
+  const [content, setContent] = useState();
+  const contentRef = useRef();
+
 
   const handleClickEmote = (emotion) => {
     setEmotion(emotion);
@@ -73,6 +76,17 @@ const DiaryEditor = () => {
               <EmotionItem key={it.emotion_id} {...it} onClick={handleClickEmote} isSelected={it.emotion_id === emotion} />
               // <div key={it.emotion_id}>{it.emotion_descript}</div>
             ))}
+          </div>
+        </section>
+        <section>
+          <h4>오늘의 일기</h4>
+          <div className="inputBox textWrapper">
+            <textarea
+              placeholder="오늘은 어땠나요?"
+              ref={contentRef}
+              value={content}
+              onChange={(e)=>setContent(e.target.value)}
+            />
           </div>
         </section>
       </div>
