@@ -78,3 +78,10 @@ header .head_btn_right {justify-content:end;width:25%;}
 .DiaryEditor h4 { padding:24px 0 16px;font-size:22px;font-weight:600; }
 .DiaryEditor .inputBox { position:relative; }
 .DiaryEditor .inputDate { margin:0 10px 0 0;padding:9px 20px;border:none;border-radius:5px;background-color:#ececec;font-size:18px; }
+.DiaryEditor .emotionListWrapper { display:grid;grid-template-columns:repeat(5, auto);gap:2%; }
+
+/* EmotionItem */
+.EmotionItem { cursor:pointer;border-radius:5px;padding:20px 0;display:flex;flex-direction:column;justify-content:center;align-items:center; }
+.EmotionItem img { width:50%; }
+.EmotionItem span { display:inline-block;margin-top:12px;font-size:18px; }
+
