@@ -79,8 +79,9 @@ const DiaryEditor = ({isEdit, originData}) => {
 
   return (
     <div className="DiaryEditor">
+      {/* 제목 표시 조건 */}
       <MyHeader
-        headText={"새 일기쓰기"}
+        headText={isEdit ? "일기 수정하기" : "새 일기쓰기"}
         leftChild={<MyButton text={"< 뒤로가기"} onClick={()=>navigate(-1)} />}
       />
       <div>
