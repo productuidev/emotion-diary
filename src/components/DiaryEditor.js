@@ -53,14 +53,27 @@ const DiaryEditor = ({isEdit, originData}) => {
     setEmotion(emotion);
   };
 
-  const {onCreate} = useContext(DiaryDispatchContext);
+  // 버튼명 수정 (수정 시), onEdit 공급
+  const {onCreate, onEdit} = useContext(DiaryDispatchContext);
   const handleSubmit = () => {
     if(content.length < 1) {
       contentRef.current.focus();
       return;
     }
 
-    onCreate(date, content, emotion);
+    // 작성완료 confirm 조건 추가 (새 일기 작성/수정 시)
+    // 조건에 따라 수정/작성 완료 후 alert창으로 묻기
+    if(window.confirm(isEdit ? "일기를 수정하시겠습니까?" : "새로운 일기를 작성하시겠습니까?")){
+      // 새 일기 작성인 경우(수정이 아닌 경우)
+      if(!isEdit) {
+        onCreate(date, content, emotion);
+      }
+      // 수정중인 경우 (onEdit의 props : 원본 id, 날짜, 내용, 감정)
+      else {
+        onEdit(originData.id, date, content, emotion);
+      }
+    };
+
     navigate('/', {replace:true});
   };
 
