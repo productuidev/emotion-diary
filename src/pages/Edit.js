@@ -34,9 +34,10 @@ const Edit = () => {
 
   // targetDiary를 통해서 originData의 state를 저장해놓고
   // originData가 있으면, DiaryEditor를 렌더링
+  // prop으로 원본데이터를 전달해주자 (isEdit, originData)
   return (
     <div>
-      {originData && <DiaryEditor />}
+      {originData && <DiaryEditor isEdit={true} originData={originData} />}
     </div>
   );
 }
