@@ -2,6 +2,8 @@ import { useContext, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { DiaryStateContext } from "../App";
 
+import DiaryEditor from "../components/DiaryEditor";
+
 const Edit = () => {
 
   const [originData, setOriginData] = useState();
@@ -20,7 +22,7 @@ const Edit = () => {
       // console.log(targetDiary); // 가져온 id의 일기데이터 출력
 
       // 조건 : id가 있을 때 setOriginData로 전달 
-      // 조건 : 경로에 id가 잘못 전달되었을 때 홈으로 (뒤로가기 방지)
+      // 조건 : 경로에 id가 잘못 전달되었을 때 홈으로 (뒤로가기 방지) 
       if(targetDiary) {
         setOriginData(targetDiary);
       }
@@ -28,11 +30,13 @@ const Edit = () => {
         navigate('/', {replace:true});
       }
     }
-  },[id, diaryList]);
+  },[id, diaryList, navigate]);
 
+  // targetDiary를 통해서 originData의 state를 저장해놓고
+  // originData가 있으면, DiaryEditor를 렌더링
   return (
     <div>
-      <h2>Edit</h2>
+      {originData && <DiaryEditor />}
     </div>
   );
 }
