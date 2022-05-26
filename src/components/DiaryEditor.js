@@ -1,4 +1,4 @@
-import { useState, useRef, useContext } from "react";
+import { useState, useRef, useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { DiaryDispatchContext } from "./../App";
 
@@ -41,7 +41,9 @@ const getStringDate = (date) => {
   return date.toISOString().slice(0, 10);
 };
 
-const DiaryEditor = () => {
+// DiaryEditor 함수에 isEdit, originData prop 넣어주기
+
+const DiaryEditor = ({isEdit, originData}) => {
   const [emotion, setEmotion] = useState(3); // 3번 default
   const [date, setDate] = useState(getStringDate(new Date()));
   const [content, setContent] = useState();
@@ -61,6 +63,17 @@ const DiaryEditor = () => {
     onCreate(date, content, emotion);
     navigate('/', {replace:true});
   };
+
+  // useEffect deps(isEdit, originData)가 바뀌면 원본데이터 받아오기
+  // EditPage에서 렌더링하는 DiaryEditor에서만 useEffect가 동작하도록
+  // 캘린더 setDate 당일 날짜, 원본 감정, 원본 내용
+  useEffect(()=>{
+    if(isEdit) {
+      setDate(getStringDate(new Date(parseInt(originData.date))));
+      setEmotion(originData.emotion);
+      setContent(originData.content);
+    }
+  },[isEdit, originData]);
 
   const navigate = useNavigate();
 
