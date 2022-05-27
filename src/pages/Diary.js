@@ -5,6 +5,7 @@ import { DiaryStateContext } from "../App";
 import { getStringDate } from "../util/date";
 
 import MyHeader from "./../components/MyHeader";
+import MyButton from "./../components/MyButton";
 
 const Diary = () => {
   const { id } = useParams(); // pathVariable = id
@@ -41,8 +42,9 @@ const Diary = () => {
       <div className="DiaryPage">
           {/* header의 조회한 일기 데이터의 날짜를 가져오기 (getStringDate를 받아서 시간객체로) */}
           <MyHeader
-            headText={`${getStringDate(new Date(data.date))}의 기록`}
-            
+            headText={`${getStringDate(new Date(data.date))} 기록`}
+            leftChild={<MyButton text={"< 뒤로가기"} onClick={()=>navigate(-1)} />}
+            rightChild={<MyButton text={"수정"} onClick={()=>navigate(`/edit/${data.id}`)} />}
           />
       </div>
     );
