@@ -60,6 +60,13 @@ const Diary = () => {
               <span className="emotionDesc">{curEmotionData.emotion_descript}</span>
             </div>
           </section>
+          <section>
+            <h4>오늘의 일기</h4>
+            {/* 원본 데이터의 일기 내용 가져오기 */}
+            <div className="diaryContentWrapper">
+              <p>{data.content}</p>
+            </div>
+          </section>
         </article>
       </div>
     );
