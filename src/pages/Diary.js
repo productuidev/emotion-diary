@@ -56,6 +56,7 @@ const Diary = () => {
             <h4>오늘의 감정</h4>
             <div className="diaryImgWrapper">
               <img src={curEmotionData.emotion_img} alt={`${curEmotionData.emotion_descript}`} />
+              <span className="emotionDesc">{curEmotionData.emotion_descript}</span>
             </div>
           </section>
         </article>
