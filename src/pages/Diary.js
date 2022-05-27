@@ -44,7 +44,7 @@ const Diary = () => {
           <MyHeader
             headText={`${getStringDate(new Date(data.date))} 기록`}
             leftChild={<MyButton text={"< 뒤로가기"} onClick={()=>navigate(-1)} />}
-            rightChild={<MyButton text={"수정"} onClick={()=>navigate(`/edit/${data.id}`)} />}
+            rightChild={<MyButton text={"수정하기"} onClick={()=>navigate(`/edit/${data.id}`)} />}
           />
       </div>
     );
