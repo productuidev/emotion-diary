@@ -3,6 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { DiaryStateContext } from "../App";
 
 import { getStringDate } from "../util/date";
+import { emotionList } from "../util/emotion";
 
 import MyHeader from "./../components/MyHeader";
 import MyButton from "./../components/MyButton";
@@ -38,6 +39,10 @@ const Diary = () => {
   }
   // 데이터가 존재하면
   else {
+    // 오늘의 감정 불러오기
+    const curEmotionData = emotionList.find((it)=>parseInt(it.emotion_id) === parseInt(data.emotion));
+    console.log(curEmotionData);
+
     return (
       <div className="DiaryPage">
           {/* header의 조회한 일기 데이터의 날짜를 가져오기 (getStringDate를 받아서 시간객체로) */}
