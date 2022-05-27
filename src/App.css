@@ -103,6 +103,7 @@ header .head_btn_right {justify-content:end;width:25%;}
 .EmotionItem_on5 { background-color:#fd565f;color:#fff; }
 
 /* Diary */
+.DiaryPage { text-align:center; }
 .DiaryPage section { width:100%;display:flex;flex-direction:column;align-items:center;text-align:center; }
 .DiaryPage h4 { padding:24px 0 16px;font-size:22px;font-weight:600; }
 .DiaryPage .diaryImgWrapper { width:250px;height:250px;border-radius:5px;display:flex;flex-direction:column;align-items:center;justify-content:space-around;background-color:#ececec; }
