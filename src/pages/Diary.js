@@ -45,12 +45,20 @@ const Diary = () => {
 
     return (
       <div className="DiaryPage">
-          {/* header의 조회한 일기 데이터의 날짜를 가져오기 (getStringDate를 받아서 시간객체로) */}
-          <MyHeader
-            headText={`${getStringDate(new Date(data.date))} 기록`}
-            leftChild={<MyButton text={"< 뒤로가기"} onClick={()=>navigate(-1)} />}
-            rightChild={<MyButton text={"수정하기"} onClick={()=>navigate(`/edit/${data.id}`)} />}
-          />
+        {/* header의 조회한 일기 데이터의 날짜를 가져오기 (getStringDate를 받아서 시간객체로) */}
+        <MyHeader
+          headText={`${getStringDate(new Date(data.date))} 기록`}
+          leftChild={<MyButton text={"< 뒤로가기"} onClick={()=>navigate(-1)} />}
+          rightChild={<MyButton text={"수정하기"} onClick={()=>navigate(`/edit/${data.id}`)} />}
+        />
+        <article>
+          <section>
+            <h4>오늘의 감정</h4>
+            <div className="diaryImgWrapper">
+              <img src={curEmotionData.emotion_img} alt={`${curEmotionData.emotion_descript}`} />
+            </div>
+          </section>
+        </article>
       </div>
     );
   }

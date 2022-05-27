@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import MyButton from "./MyButton";
+import { emotionList } from "../util/emotion";
 
 const DiaryItem = ({ id, emotion, content, date }) => {
   const navigate = useNavigate();
@@ -18,7 +19,7 @@ const DiaryItem = ({ id, emotion, content, date }) => {
         className={["emotionImgWrapper", `emotionImgWrapper${emotion}`].join(" ")}
         onClick={goDetail}
       >
-        <img src={process.env.PUBLIC_URL + `assets/emotion${emotion}.png`} alt={`감정점수 ${emotion}점`} />
+        <img src={process.env.PUBLIC_URL + `assets/emotion${emotion}.png`} alt={`${emotionList.emotion_descript}`} />
       </div>
       <div className="infoWrapper" onClick={goDetail}>
         <div className="DiaryDate">{strDate}</div>
