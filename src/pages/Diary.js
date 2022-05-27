@@ -1,8 +1,17 @@
-import { useParams } from "react-router-dom"; // custom hooks
+import { useContext, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import { DiaryStateContext } from "../App";
 
 const Diary = () => {
   const { id } = useParams(); // pathVariable = id
-  console.log(id); // id check
+  const diaryList = useContext(DiaryStateContext); // diaryList 가져오기
+
+  useEffect(()=>{
+    if(diaryList.length >= 1) {
+      const targetDiary = diaryList.find((it)=>parseInt(it.id) === parseInt(id));
+      console.log(targetDiary);
+    }
+  },[id, diaryList]);
 
   return (
     <div>

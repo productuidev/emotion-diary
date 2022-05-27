@@ -53,7 +53,7 @@ const DiaryEditor = ({isEdit, originData}) => {
     setEmotion(emotion);
   };
 
-  // 버튼명 수정 (수정 시), onEdit 공급
+  // 작성완료에 onEdit 공급
   const {onCreate, onEdit} = useContext(DiaryDispatchContext);
   const handleSubmit = () => {
     if(content.length < 1) {
