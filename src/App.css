@@ -102,10 +102,15 @@ header .head_btn_right {justify-content:end;width:25%;}
 .EmotionItem_on5 { background-color:#fd565f;color:#fff; }
 
 /* Diary */
-.DiaryPage section {width:100%;display:flex;flex-direction:column;align-items:center;text-align:center;}
+.DiaryPage section { width:100%;display:flex;flex-direction:column;align-items:center;text-align:center; }
 .DiaryPage h4 { padding:24px 0 16px;font-size:22px;font-weight:600; }
-.DiaryPage .diaryImgWrapper {width:250px;height:250px;border-radius:5px;display:flex;flex-direction:column;align-items:center;justify-content:space-around;background-color:#ececec;}
-.DiaryPage .diaryImgWrapper .emotionDesc {display:block;font-size:20px;}
+.DiaryPage .diaryImgWrapper { width:250px;height:250px;border-radius:5px;display:flex;flex-direction:column;align-items:center;justify-content:space-around;background-color:#ececec; }
+.DiaryPage .diaryImgWrapper1 { background-color:#64c964;color:#fff; }
+.DiaryPage .diaryImgWrapper2 { background-color:#9dd772;color:#fff; }
+.DiaryPage .diaryImgWrapper3 { background-color:#fdce17;color:#fff; }
+.DiaryPage .diaryImgWrapper4 { background-color:#fd8446;color:#fff; }
+.DiaryPage .diaryImgWrapper5 { background-color:#fd565f;color:#fff; }
+.DiaryPage .diaryImgWrapper .emotionDesc { display:block;font-size:20px; }
 
 
 

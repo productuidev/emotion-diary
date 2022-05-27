@@ -54,7 +54,8 @@ const Diary = () => {
         <article>
           <section>
             <h4>오늘의 감정</h4>
-            <div className="diaryImgWrapper">
+            {/* 원본 데이터의 감정 가져오기 */}
+            <div className={["diaryImgWrapper", `diaryImgWrapper${data.emotion}`].join(" ")}>
               <img src={curEmotionData.emotion_img} alt={`${curEmotionData.emotion_descript}`} />
               <span className="emotionDesc">{curEmotionData.emotion_descript}</span>
             </div>
