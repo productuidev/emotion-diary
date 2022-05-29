@@ -1,4 +1,4 @@
-import React, { useReducer, useRef } from "react";
+import React, { useEffect, useReducer, useRef } from "react";
 
 import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
@@ -60,13 +60,27 @@ function App() {
   //   console.log({item1, item2, item3});
   // }, []);
 
+  useEffect(()=>{
+    const localData = localStorage.getItem("diary");
+    if(localData) {
+      const diaryList = JSON.parse(localData).sort(
+        (a,b) => parseInt(b.id) - parseInt(a.id)
+      );
+      dataId.current = parseInt(diaryList[0].id) + 1
+
+      console.log(diaryList);
+      console.log(dataId);
+    }
+  }, []);
+
   // data의 기본 state는 []에서 dummyData 받기
   const [data, dispatch] = useReducer(reducer, []);
   //console.log(new Date().getTime(dummyData)); // 현재시간
 
   // 일기 id로 사용
   // dummyData를 사용하게 될 경우 key의 초기값 변경
-  const dataId = useRef(6);
+  // key 초기값 변경
+  const dataId = useRef(0);
 
   // CREATE
   const onCreate = (date, content, emotion) => {
