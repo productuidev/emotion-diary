@@ -49,12 +49,12 @@ const dummyData = [
 
 function App() {
   // 실습
-  useEffect(()=>{
-    const item1 = localStorage.getItem("item1");
-    const item2 = localStorage.getItem("item2");
-    const item3 = JSON.parse(localStorage.getItem("item3"));
-    console.log({item1, item2, item3});
-  }, []);
+  // useEffect(()=>{
+  //   const item1 = localStorage.getItem("item1");
+  //   const item2 = localStorage.getItem("item2");
+  //   const item3 = JSON.parse(localStorage.getItem("item3"));
+  //   console.log({item1, item2, item3});
+  // }, []);
 
   // data의 기본 state는 []에서 dummyData 받기
   const [data, dispatch] = useReducer(reducer, dummyData);
