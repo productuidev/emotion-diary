@@ -1,4 +1,4 @@
-import React, { useReducer, useRef } from "react";
+import React, { useEffect, useReducer, useRef } from "react";
 
 import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
@@ -48,6 +48,13 @@ const dummyData = [
 ]
 
 function App() {
+  // 실습
+  useEffect(()=>{
+    localStorage.setItem("item1", 10);
+    localStorage.setItem("item2", "20");
+    localStorage.setItem("item3", {value:30});
+  }, []);
+
   // data의 기본 state는 []에서 dummyData 받기
   const [data, dispatch] = useReducer(reducer, dummyData);
   //console.log(new Date().getTime(dummyData)); // 현재시간
