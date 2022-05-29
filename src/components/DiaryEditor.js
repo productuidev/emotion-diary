@@ -25,7 +25,8 @@ const DiaryEditor = ({isEdit, originData}) => {
   };
 
   // 작성완료에 onEdit 공급
-  const {onCreate, onEdit} = useContext(DiaryDispatchContext);
+  // 삭제하기 onRemove 공급
+  const {onCreate, onEdit, onRemove} = useContext(DiaryDispatchContext);
   const handleSubmit = () => {
     if(content.length < 1) {
       contentRef.current.focus();
@@ -48,6 +49,14 @@ const DiaryEditor = ({isEdit, originData}) => {
     navigate('/', {replace:true});
   };
 
+  // 삭제하기
+  const handleRemove = () => {
+    if(window.confirm("정말 삭제하시겠습니까?")) {
+      onRemove(originData.id);
+      navigate('/',{replace:true});
+    }
+  };
+
   // useEffect deps(isEdit, originData)가 바뀌면 원본데이터 받아오기
   // EditPage에서 렌더링하는 DiaryEditor에서만 useEffect가 동작하도록
   // 캘린더 setDate 당일 날짜, 원본 감정, 원본 내용
@@ -67,7 +76,7 @@ const DiaryEditor = ({isEdit, originData}) => {
       <MyHeader
         headText={isEdit ? "일기 수정하기" : "새 일기쓰기"}
         leftChild={<MyButton text={"< 뒤로가기"} onClick={()=>navigate(-1)} />}
-        rightChild={isEdit && (<MyButton text={"삭제하기"} type={"negative"} />)}
+        rightChild={isEdit && (<MyButton text={"삭제하기"} type={"negative"} onClick={handleRemove} />)}
       />
       <div>
         <section>
