@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import DiaryItem from "./DiaryItem";
 import MyButton from "./MyButton";
@@ -17,8 +17,9 @@ const filterOptionList = [
   { value: "bad", name: "안좋은 감정만" },
 ];
 
+// ControlMemo 성능 최적화
 // Memu
-const ControlMenu = ({value, onChange, optionList}) => {
+const ControlMenu = React.memo(({value, onChange, optionList}) => {
   return (
     <select className="ControlMenu" value={value} onChange={(e)=>onChange(e.target.value)}>
       {optionList.map((it,idx)=>(
@@ -26,7 +27,7 @@ const ControlMenu = ({value, onChange, optionList}) => {
       ))}
     </select>
   );
-};
+});
 
 // List
 const DiaryList = ({diaryList}) => {
