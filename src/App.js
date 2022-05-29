@@ -52,7 +52,7 @@ function App() {
   useEffect(()=>{
     localStorage.setItem("item1", 10);
     localStorage.setItem("item2", "20");
-    localStorage.setItem("item3", {value:30});
+    localStorage.setItem("item3", JSON.stringify({value:30}));
   }, []);
 
   // data의 기본 state는 []에서 dummyData 받기
