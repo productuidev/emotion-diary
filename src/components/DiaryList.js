@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import DiaryItem from "./DiaryItem";
 import MyButton from "./MyButton";
@@ -17,9 +17,14 @@ const filterOptionList = [
   { value: "bad", name: "안좋은 감정만" },
 ];
 
-// ControlMemo 성능 최적화
+// ControlMemu 성능 최적화 (HOC 고차컴포넌트 : 컴포넌트 하나를 인자로 받아서 강화된 컴포넌트로 전달, Memoization)
 // Memu
 const ControlMenu = React.memo(({value, onChange, optionList}) => {
+  // mount되었을 때 잘 되었는지 useEffect로 확인
+  useEffect(()=>{
+    console.log("Control Menu");
+  });
+
   return (
     <select className="ControlMenu" value={value} onChange={(e)=>onChange(e.target.value)}>
       {optionList.map((it,idx)=>(
