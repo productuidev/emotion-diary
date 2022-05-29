@@ -31,6 +31,10 @@ const reducer = (state, action) => {
     default:
       return state;
   }
+
+  // reducer를 거쳐서 일기 렌더링
+  // newState가 return되기 전 localStorage에 저장 (직렬화) 
+  localStorage.setItem("diary", JSON.stringify(newState));
   return newState;
 };
 
