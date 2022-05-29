@@ -43,14 +43,6 @@ const DiaryList = ({diaryList}) => {
   // filter
   const [filter, setFilter] = useState("all");
 
-  // sort, filter을 중간에 handling하는 함수를 만들기
-  const handleSetSortType = (sortType) => {
-    setSortType(sortType);
-  };
-  const handleSetFilter = (filter) => {
-    setFilter(filter);
-  };
-
   // 정렬조건
   const getProcessedDiaryList = () => {
     const filterCallBack = (item) => {
@@ -83,9 +75,8 @@ const DiaryList = ({diaryList}) => {
     <div className="DiaryList">
       <div class="menuWrapper">
         <div className="leftCol">
-          {/* 전달하는 prop 변경 */}
-          <ControlMenu value={sortType} onChange={handleSetSortType} optionList={sortOptionList} /> 
-          <ControlMenu value={filter} onChange={handleSetFilter} optionList={filterOptionList} />
+          <ControlMenu value={sortType} onChange={setSortType} optionList={sortOptionList} /> 
+          <ControlMenu value={filter} onChange={setFilter} optionList={filterOptionList} />
         </div>
         <div className="rightCol">
           <MyButton type={"positive"} text={"새 일기쓰기"} onClick={()=>navigate("./new")} />
