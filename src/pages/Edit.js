@@ -17,7 +17,7 @@ const Edit = () => {
   useEffect(()=>{
     const titleElement = document.getElementsByTagName("title")[0];
     titleElement.innerHTML = `감정 일기장 - ${id}번 일기 수정`;
-  },[]);
+  },[id]);
 
   // 데이터는 컴포넌트가 mount된 시점에서 가져온다
   // 조건 : 일기데이터가 1개라도 있을 때만 가져온다 (id 오류 방지 형변환)
