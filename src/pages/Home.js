@@ -12,6 +12,12 @@ const Home = () => {
   const [curDate, setCurDate] = useState(new Date());
   const headText = `${curDate.getFullYear()}년 ${curDate.getMonth()+1}월`;
 
+  // title 가져온 후 상세페이지의 id 표시 (id번 일기)
+  useEffect(()=>{
+    const titleElement = document.getElementsByTagName("title")[0];
+    titleElement.innerHTML = `감정 일기장`;
+  },[]);
+
   useEffect(()=>{
     if(diaryList.length >= 1) {
       const firstDay = new Date(
