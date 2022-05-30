@@ -32,7 +32,7 @@ const Home = () => {
         curDate.getMonth() + 1,
         0, 23, 59, 59
       ).getTime();
-      // console.log(new Date(lastDay));
+      console.log(new Date(lastDay));
   
       setData(diaryList.filter((it)=>firstDay <= it.date && it.date <= lastDay));
     }

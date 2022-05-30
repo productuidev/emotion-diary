@@ -42,7 +42,24 @@ const reducer = (state, action) => {
 export const DiaryStateContext = React.createContext();
 export const DiaryDispatchContext = React.createContext();
 
+// 일기 더미데이터 (시간순)
+// const dummyData = [
+//   { id:1, emotion:1, content:"독립 이래 최악의 외환위기를 겪어온 스리랑카가 결국 공식적인 디폴트(채무불이행) 상태라고 19일 로이터 통신이 보도했다.", date:1653055859902, },
+//   { id:2, emotion:2, content:"핀란드와 스웨덴이 북대서양조약기구 나토 가입을 위한 신청서를 제출했지만, 양국의 나토 가입을 반대해 온 터키의 입장은 여전히 강경합니다.", date:1653055859903, },
+//   { id:3, emotion:3, content:"전 세계 인구 절반 이상이 심장질환 발병 주요 위험요인 중 하나인 고혈압을 가지고 있다. 혈압 조절은 유전적 요인, 생활습관 요인, 체내 미생물군이 어떤 형태로 조화를 이뤄 기인하는 것으로 밝혀져 있다.", date:1653055859904, },
+//   { id:4, emotion:4, content:"로봇 산업은 공장과 같은 생산 현장에서 위험 작업을 대체하는 산업용과 의료·외식·숙박 등 부문에서 활용되는 서비스용으로 구분된다.", date:1653055859905, },
+//   { id:5, emotion:5, content:"칸 영화제에서 첫 선을 보인 배우 이정재의 감독 데뷔작 '헌트'가 상영 전회차 매진을 기록했다.", date:1653055859906, },
+// ]
+
 function App() {
+  // 실습
+  // useEffect(()=>{
+  //   const item1 = localStorage.getItem("item1");
+  //   const item2 = localStorage.getItem("item2");
+  //   const item3 = JSON.parse(localStorage.getItem("item3"));
+  //   console.log({item1, item2, item3});
+  // }, []);
+
   useEffect(()=>{
     const localData = localStorage.getItem("diary");
     if(localData) {
@@ -50,7 +67,7 @@ function App() {
         (a,b) => parseInt(b.id) - parseInt(a.id)
       );
       if(diaryList.length >= 1) {
-        dataId.current = parseInt(diaryList[0].id+1);
+        dataId.current = parseInt(diaryList[0].id) + 1
         dispatch({type:"INIT", data:diaryList});
       }
     }
