@@ -66,6 +66,10 @@ function App() {
       const diaryList = JSON.parse(localData).sort(
         (a,b) => parseInt(b.id) - parseInt(a.id)
       );
+<<<<<<< HEAD
+=======
+
+>>>>>>> 7284c2a249dfd50a733ea9026a5d256246afb6bc
       if(diaryList.length >= 1) {
         dataId.current = parseInt(diaryList[0].id) + 1
         dispatch({type:"INIT", data:diaryList});
