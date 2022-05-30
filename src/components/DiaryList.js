@@ -25,13 +25,15 @@ const ControlMenu = React.memo(({value, onChange, optionList}) => {
   //   console.log("Control Menu");
   // });
 
-  return (
+  return ( 
     <select className="ControlMenu" value={value} onChange={(e)=>onChange(e.target.value)}>
-      {optionList.map((it,idx)=>(
-        <option value={it.value}>{it.name}</option>
+      {optionList.map((it, index) => (
+        <option key={index} value={it.value}>
+          {it.name}
+        </option>
       ))}
     </select>
-  );
+  )
 });
 
 // List

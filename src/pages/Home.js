@@ -32,16 +32,19 @@ const Home = () => {
         curDate.getMonth() + 1,
         0, 23, 59, 59
       ).getTime();
-      console.log(new Date(lastDay));
+      //console.log(new Date(lastDay));
   
       setData(diaryList.filter((it)=>firstDay <= it.date && it.date <= lastDay));
+    }
+    else {
+      setData([])
     }
   }, [diaryList, curDate]);
 
   // 확인
-  useEffect(() => {
-    console.log(data);
-  }, [data]);
+  // useEffect(() => {
+  //   console.log(data);
+  // }, [data]);
 
   const increaseMonth = () => {
     setCurDate(new Date(curDate.getFullYear(), curDate.getMonth() + 1, curDate.getDate()));
