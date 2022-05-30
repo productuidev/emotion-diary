@@ -21,9 +21,9 @@ const filterOptionList = [
 // Memu
 const ControlMenu = React.memo(({value, onChange, optionList}) => {
   // mount되었을 때 잘 되었는지 useEffect로 확인
-  useEffect(()=>{
-    console.log("Control Menu");
-  });
+  // useEffect(()=>{
+  //   console.log("Control Menu");
+  // });
 
   return (
     <select className="ControlMenu" value={value} onChange={(e)=>onChange(e.target.value)}>
