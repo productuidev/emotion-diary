@@ -1,3 +1,4 @@
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import MyButton from "./MyButton";
 import { emotionList } from "../util/emotion";
@@ -32,4 +33,5 @@ const DiaryItem = ({ id, emotion, content, date }) => {
   );
 };
 
-export default DiaryItem;
+// HOC 
+export default React.memo(DiaryItem);
