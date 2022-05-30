@@ -14,6 +14,12 @@ const Diary = () => {
   const navigate = useNavigate(); // 이동
   const [data, setData] = useState();
 
+  // title 가져온 후 상세페이지의 id 표시 (id번 일기)
+  useEffect(()=>{
+    const titleElement = document.getElementsByTagName("title")[0];
+    titleElement.innerHTML = `감정 일기장 - ${id}번 일기`;
+  },[id]);
+
   // 데이터는 컴포넌트가 mount된 시점에서 가져온다
   // 조건 : 일기데이터가 1개라도 있을 때만 가져온다 (id 오류 방지 형변환)
   // deps : id나 diaryList가 변할 때만 가져온다
