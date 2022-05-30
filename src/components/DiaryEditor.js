@@ -1,4 +1,4 @@
-import { useState, useRef, useContext, useEffect } from "react";
+import { useState, useRef, useContext, useEffect, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import { DiaryDispatchContext } from "./../App";
 
@@ -17,12 +17,13 @@ env.PUBLIC_URL = env.PUBLIC_URL || "";
 const DiaryEditor = ({isEdit, originData}) => {
   const [emotion, setEmotion] = useState(3); // 3번 default
   const [date, setDate] = useState(getStringDate(new Date()));
-  const [content, setContent] = useState();
+  const [content, setContent] = useState(); // state 변화
   const contentRef = useRef();
 
-  const handleClickEmote = (emotion) => {
+  // memoization useCallback
+  const handleClickEmote = useCallback((emotion) => {
     setEmotion(emotion);
-  };
+  },[]);
 
   // 작성완료에 onEdit 공급
   // 삭제하기 onRemove 공급
