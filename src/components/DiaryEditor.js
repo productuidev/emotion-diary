@@ -9,9 +9,6 @@ import EmotionItem from "./EmotionItem";
 import { getStringDate } from "../util/date";
 import { emotionList } from "../util/emotion";
 
-const env = process.env;
-env.PUBLIC_URL = env.PUBLIC_URL || "";
-
 // DiaryEditor 함수에 isEdit, originData prop 넣어주기
 
 const DiaryEditor = ({isEdit, originData}) => {
