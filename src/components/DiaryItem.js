@@ -6,10 +6,6 @@ import { emotionList } from "../util/emotion";
 const DiaryItem = ({ id, emotion, content, date }) => {
   const navigate = useNavigate();
 
-  // img
-  const env = process.env;
-  env.PUBLIC_URL = env.PUBLIC_URL || "";
-
   const strDate = new Date(parseInt(date)).toLocaleDateString();
   const goDetail = () => { navigate(`/diary/${id}`) };
   const goEdit = () => { navigate(`/edit/${id}`) }
