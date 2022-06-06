@@ -1,7 +1,7 @@
 {
   "hosting": {
-    "site": "productuidev-emotion-diary",
-    "public": "public",
+    "site": "emotion-diary-4d42a",
+    "public": "build",
     "ignore": [
       "firebase.json",
       "**/.*",
@@ -13,11 +13,5 @@
         "destination": "/index.html"
       }
     ]
-  },
-  "emulators": {
-    "hosting": {
-      "port": 5000,
-      "host": "0.0.0.0"
-    }
   }
 }
