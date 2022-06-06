@@ -45,7 +45,7 @@ export const DiaryDispatchContext = React.createContext();
 function App() {
   useEffect(()=>{
     const localData = localStorage.getItem("diary");
-    if(localData.length != null && localData.length > 2) {
+    if(localData != null && localData.length > 2) {
       const diaryList = JSON.parse(localData).sort((a,b) => parseInt(b.id) - parseInt(a.id));
       dataId.current = parseInt(diaryList[0].id)+1;
       
