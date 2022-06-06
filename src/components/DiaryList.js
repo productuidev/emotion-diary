@@ -75,7 +75,7 @@ const DiaryList = ({diaryList}) => {
 
   return (
     <div className="DiaryList">
-      <div class="menuWrapper">
+      <div className="menuWrapper">
         <div className="leftCol">
           <ControlMenu value={sortType} onChange={setSortType} optionList={sortOptionList} /> 
           <ControlMenu value={filter} onChange={setFilter} optionList={filterOptionList} />
